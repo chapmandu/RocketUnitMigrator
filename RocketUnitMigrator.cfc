@@ -31,11 +31,10 @@ component output="false" mixin="none" {
 	public string function replacement(required string string) {
 		var loc = {};
 		loc.rv = arguments.string;
-		loc.rv = REReplaceNoCase(loc.rv, 'assert\("(.+?)"\)', "assert(\1)", "all");
-		loc.rv = REReplaceNoCase(loc.rv, "assert\('(.+?)'\)", "assert(\1)", "all");
-		loc.rv = REReplaceNoCase(loc.rv, 'raised\("(.+?)"\)', "raised(\1)", "all");
-		loc.rv = REReplaceNoCase(loc.rv, 'fail\("(.+?)"\)', "fail(\1)", "all");
-		loc.rv = REReplaceNoCase(loc.rv, 'debug\("(.+?)"\)', "debug(\1)", "all");
+		for (loc.i in ["assert","raised","fail","debug"]) {
+			loc.rv = REReplaceNoCase(loc.rv, '#loc.i#\("(.+?)"\)', "#loc.i#(\1)", "all");
+			loc.rv = REReplaceNoCase(loc.rv, "#loc.i#\('(.+?)'\)", "#loc.i#(\1)", "all");
+		};
 		return loc.rv;
 	}
 }
