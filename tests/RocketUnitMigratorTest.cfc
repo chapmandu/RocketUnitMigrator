@@ -15,6 +15,12 @@
 			assert(loc.actual eq loc.expected);
 		}
 
+		public any function test_rocketunitmigrator_assert_replacement_with_single_quotes() {
+			loc.actual = loc.plugin.replacement("assert('foo == bar');");
+			loc.expected = 'assert(foo == bar);';
+			assert(loc.actual eq loc.expected);
+		}
+
 		// public any function test_rocketunitmigrator_assert_replacement_with_second_arg_returns_expected_value() {
 		// 	loc.actual = loc.plugin.replacement('assert("foo == bar", "baz");');
 		// 	loc.expected = 'assert(foo == bar, baz);';

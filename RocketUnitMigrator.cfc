@@ -32,7 +32,7 @@ component output="false" mixin="none" {
 		var loc = {};
 		loc.rv = arguments.string;
 		loc.rv = REReplaceNoCase(loc.rv, 'assert\("(.+?)"\)', "assert(\1)", "all");
-		loc.rv = REReplaceNoCase(loc.rv, 'assert\('(.+?)'\)', "assert(\1)", "all");
+		loc.rv = REReplaceNoCase(loc.rv, "assert\('(.+?)'\)", "assert(\1)", "all");
 		loc.rv = REReplaceNoCase(loc.rv, 'raised\("(.+?)"\)', "raised(\1)", "all");
 		loc.rv = REReplaceNoCase(loc.rv, 'fail\("(.+?)"\)', "fail(\1)", "all");
 		loc.rv = REReplaceNoCase(loc.rv, 'debug\("(.+?)"\)', "debug(\1)", "all");
