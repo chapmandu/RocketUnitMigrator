@@ -7,7 +7,7 @@ component output="false" mixin="none" {
 	}
 
 	public string function pluginVersion() {
-		return "0.1.0";
+		return "0.1.1";
 	}
 
 	public any function migrate(required string dir) {
